@@ -1,0 +1,8 @@
+#alias
+#alias ls="ls -G"
+alias op="open"
+alias py="python3"
+alias ranger="pipx run --spec ranger-fm ranger"
+alias .="cd .." 
+alias update="brew update; brew upgrade --greedy; brew autoremove; brew cleanup; brew doctor"
+#alias ls='ls --color=auto'
