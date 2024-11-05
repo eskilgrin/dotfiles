@@ -12,7 +12,7 @@ Use the following command to download and extract the dotfiles into a `~/.dotfil
 
 ```bash
 curl -L https://github.com/eskilgrin/dotfiles/archive/refs/heads/master.tar.gz | tar -xz
-mv dotfiles-main ~/.dotfiles
+mv dotfiles-master ~/.dotfiles
 ```
 
 
