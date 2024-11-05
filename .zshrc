@@ -1,9 +1,12 @@
+# Supress macos related logging
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
 # BREW
 eval "$(/opt/homebrew/bin/brew shellenv)"
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
 # Own methods
-source ~/dotfiles/zsh_functions/.ff_zsh # ctrl + f
+#source ~/dotfiles/zsh_functions/.ff_zsh # ctrl + f
 source ~/dotfiles/zsh_functions/.aliases_zsh
 source ~/dotfiles/zsh_functions/.prompt_function_zsh
 source ~/dotfiles//zsh_functions/.mcdir_zsh # creates and enters new directory

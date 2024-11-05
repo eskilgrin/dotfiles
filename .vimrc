@@ -32,7 +32,6 @@ set backspace=indent,eol,start
 set number
 
 " vim plug
-
 call plug#begin('~/.vim/plugged')
 
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
