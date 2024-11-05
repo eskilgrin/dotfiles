@@ -11,7 +11,7 @@ To use these dotfiles, follow the steps below to download and set them up.
 Use the following command to download and extract the dotfiles into a `~/.dotfiles` directory:
 
 ```bash
-curl -L https://github.com/eskilgrin/dotfiles/archive/refs/heads/main.tar.gz | tar -xz
+curl -L https://github.com/eskilgrin/dotfiles/archive/refs/heads/master.tar.gz | tar -xz
 mv dotfiles-main ~/.dotfiles
 ```
 
