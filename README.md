@@ -1,6 +1,8 @@
 # Dotfiles
 
-This repository contains my personal dotfiles for configuring my development environment, including `.zshrc`, `.vimrc`, and a folder of custom Zsh functions. These files are tailored for a streamlined, efficient workflow.
+This repository contains my personal dotfiles for configuring my development environment, including `.zshrc`, `.vimrc`, and a folder of custom Zsh functions.
+
+> **Note**: [Brew](https://brew.sh/) is used
 
 ## Installation
 
