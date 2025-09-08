@@ -5,4 +5,6 @@ alias py="python3"
 alias ranger="pipx run --spec ranger-fm ranger"
 alias .="cd .." 
 alias update="brew update; brew upgrade --greedy; brew autoremove; brew cleanup; brew doctor"
+alias sshifi="ssh 'eskilgh@uio.ifi.no'"
+alias sshkorn="ssh eskil@85.165.184.150 -p 2222"
 #alias ls='ls --color=auto'

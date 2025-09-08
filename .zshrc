@@ -31,9 +31,29 @@ autoload -Uz compinit && compinit
 autoload -U colors && colors
 setopt prompt_subst
 
+# Prompt
+# Allow command substitution inside PROMPT
+setopt PROMPT_SUBST
+
+# Print a tilde-shortened PWD, capped at 25 chars, with "..." at the start if trimmed
+short_pwd() {
+  local max=50
+  local marker="..."
+  local p="${PWD/#$HOME/~}"   # turn $HOME prefix into ~
+  if (( ${#p} > max )); then
+    print -r -- "${marker}${p: -$((max - ${#marker}))}"
+  else
+    print -r -- "$p"
+  fi
+}
+
+# Use the trimmed path in your prompt
+PROMPT='%{$fg_bold[green]%}$(short_pwd)%{$reset_color%} $(git_prompt_info) %{$fg[magenta]%}➜%{$reset_color%} '
+
+
 # PROMPT
 # Set a simplified Zsh prompt with custom branch color
-PROMPT='%{$fg_bold[green]%}%~%{$reset_color%} $(git_prompt_info) %{$fg[magenta]%}➜%{$reset_color%} '
+# PROMPT='%{$fg_bold[green]%}%~%{$reset_color%} $(git_prompt_info) %{$fg[magenta]%}➜%{$reset_color%} '
 
 #Prompt
 #ZSH_HIGHLIGHT_STYLES[command]='fg=#8e8e8e'
@@ -42,3 +62,19 @@ PROMPT='%{$fg_bold[green]%}%~%{$reset_color%} $(git_prompt_info) %{$fg[magenta]%
 #%F{#f9cb9c}%2~ %f🚀 '
 #PROMPT='
 #%F{magenta}%~ > % '
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/eskilgrinakerhansen/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/eskilgrinakerhansen/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/eskilgrinakerhansen/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/eskilgrinakerhansen/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
